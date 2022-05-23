@@ -1,0 +1,587 @@
+/*
+Theme Name: Forage Theme
+Theme URI: http://wordpress.org/themes/name-of-my-theme
+Author: Taylor Balcer
+Author URI: http://my-website.com/
+Description: This wonderful theme for WordPress is very useful for nature lovers.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: purple, green, light, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images
+Text Domain: forage_theme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* RESTORE STYLING FOR LISTS, STRONG, AND EM */
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1rem;
+}
+ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+  padding-left: 1rem;
+}
+ul ul, ol ul {
+  list-style-type: circle;
+}
+ol ol, ul ol {
+  list-style-type: lower-latin;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+/* Grids */
+body{
+	display:grid;
+	gap: .5rem;
+	grid-template-areas:
+		"hdr"
+		"mn"
+		"asi"
+		"ftr";
+}
+
+#masthead{
+	grid-area:hdr;
+	background-color:#989788;
+}
+.page_footer{
+	grid-area:ftr;
+}
+
+main{
+	grid-area: mn;
+}
+aside{
+	grid-area: asi;
+}
+
+/* --------- YOUR STYLES BEGIN HERE ---------- */
+
+:root {
+  font-size: 100%;
+  background-color: #A78682;
+  
+  background-size:auto;
+}
+
+img{
+	object-fit:contain;
+	
+}
+body {
+  background-color: #876376;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+  font-size: calc(16px + 0.5vw);
+  line-height: 1.4;
+  font-family: 'IM Fell English SC', serif;
+  
+}
+
+header {
+  background-color: #E7EBC5;
+/*   border: solid #5c6c3f 6px; */
+  padding: 1rem;
+  
+ 
+  
+}
+
+p{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  padding-bottom:1rem;
+  padding-top:1rem;
+}
+
+a{
+  font-family:'Lobster Two', cursive;
+}
+
+main {
+/*   border: solid #81709c 6px; */
+  padding: 1rem;
+}
+
+.widget-area {
+  
+  padding: 1rem;
+  background-color:#51344D;
+  color:rgba(255, 255, 255, 0.749);
+  
+}
+
+
+.wp-block-buttons{
+	font-size:1.2rem;
+	
+}
+
+
+/* Text hierarchy */
+.site-title {
+  font-size: 1.4rem;
+}
+
+.site-title a{
+  color:rgb(97, 1, 141);
+}
+.site-title a:hover{
+  background-color:#615475;
+  color:#c7d542;
+}
+
+.site-description {
+  font-size: 1.3rem;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+ 
+}
+
+.site-description p{
+  font-size: .9rem;
+  font-family: 'Zen Kurenaido', sans-serif;
+ 
+}
+
+#nav-above .assistive-text{
+	display:none;
+}
+#nav-below .assistive-text{
+	display:none;
+}
+
+#nav-below{
+	list-style-type:none;
+}
+
+.assistive-text{
+	padding:.5;
+	width:100%;
+	margin-left:.2rem;
+}
+
+.page-title {
+  font-size: 2rem;
+	background-color:#E7EBC5;
+}
+
+.entry-title{
+	font-size:1.7rem;
+}
+
+#nav-below .assistive-text{
+	width:100%;
+}
+
+.entry-author a:hover{
+color:#E7EBC5;
+}
+
+.container{
+	display:flex;
+	flex-flow:row wrap;
+}
+
+.entry-title a:hover{
+	color:#A78682;
+}
+
+/*style the content page */
+.post {
+  
+  padding: 1rem;
+  background-color: white;
+  margin: 0 1rem 1rem 0;
+  /*close post header styling*/
+  
+}
+
+.post:hover{
+  background-color:#A78682;
+}
+
+.post header {
+  background-color: #E7EBC5;
+  
+}
+
+.post header a {
+  color: #51344D;
+}
+
+.post header a:hover {
+	color: #6F5060;
+  }
+
+.post:last-child {
+  margin: 0 0 0 0;
+}
+
+/* MAIN NAV */
+.main-menu {
+  list-style-type: none;
+  padding:0;
+  text-decoration: none;
+  background: #6F5060;
+  display:inline;
+  text-align: center;
+}
+
+.main-menu a {
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  color:rgba(255, 255, 255, 0.755);
+  display:inline;
+}
+
+.main-menu a:hover{
+  color:#af93d8;
+}
+ ul li a{
+	 display:inline;
+ }
+
+.caption{
+	font-size:1.2rem;
+}
+
+.wp-block-media-text{
+	padding:0;
+}
+.wp-block-group h2{
+	color:#82557c;
+	
+}
+
+
+.widget-area li a{
+	color:rgb(173, 170, 170);
+}
+
+.widget-area li a:hover{
+	color:#a9b72b;
+}
+.menu{
+	list-style-type: none;
+	padding-left: 0;
+	text-decoration: none;
+	background: #6F5060;
+	text-align: center;
+	display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+			-ms-flex-flow: row nowrap;
+				flex-flow: row nowrap;
+		-webkit-box-pack: start;
+			-ms-flex-pack: start;
+				justify-content: flex-start;
+				float:left;
+}
+.menu li a{
+	color:rgba(255, 255, 255, 0.755);
+	padding: 1;
+	text-decoration: none;
+	
+}
+
+.menu li a:hover{
+	color:#af93d8;
+} 
+
+.menu li a:active{
+	color:#5c6c3f;
+} 
+
+.menu li a:visited{
+	color:#E7EBC5;
+} 
+a{
+	color:#4f3a45;
+}
+
+a:hover{
+	color:#A78682);
+}
+.widget a{
+  color:#a9b72b;
+}
+.widget a:hover{
+  color:#E7EBC5;
+}
+
+.entry-tags a{
+  color:grey;
+}
+.entry-tags a:hover{
+	
+  color:#E7EBC5;
+}
+
+.wp-block-pullquote{
+font-size:1.5rem;	
+}
+
+.entry-header{
+font-size:2rem;
+}
+
+.entry-content h2{
+	font-size:1.5rem;
+}
+
+#main-navigation li{
+	float:left;
+	font-size:1.7rem;
+	padding:0;
+
+}
+
+
+
+menu, ol, ul li{
+	list-style:none;
+}
+
+.wp-block-columns{
+	font-size:1.1rem;
+}
+
+.wp-block-media-text__content{
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-size:2rem;
+	
+}
+
+.wp-block-media-text__content p{
+	font-size:2rem;
+}
+/* .wp-block-media-text{
+max-height:200px;
+}
+
+.wp-block-media-text img{
+	max-height:200px;
+	}*/
+
+.wp-block-media-text__media{
+	padding:0;
+
+}
+nav{
+	padding:0;
+}
+
+.nav__link{
+        
+	display:block;
+	padding: 1rem;
+	text-decoration:none;
+
+}
+
+
+
+
+
+.nav__list{
+	list-style-type:none;
+	padding-left:0;
+	background-color: #6F5060;
+	
+}
+
+/* We'll use ~ which is the general sibling combinator to style lists but ONLY if they are sibling of the checkbox when its not checked*/
+.nav__toggle ~ ol{
+	display: none;
+}
+
+
+.nav__toggle:checked ~ ol{
+	display: block;
+}
+
+
+
+.nav__toggle{
+	position:absolute;
+	top: -9999px;
+	left: -9999px;
+   
+   
+}
+
+
+.nav__toggle-label{
+	padding: 15px;
+	background-color:#4f3a45;
+	display:block;
+	cursor:pointer;
+	color:White;
+   
+}
+
+
+.wp-block-social-links{
+	margin-right:2rem;
+}
+
+
+
+
+
+/* styles for 980px (30rem) wide or wider */
+@media screen and (min-width: 980px) {
+
+	.main-menu {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+			-ms-flex-flow: row nowrap;
+				flex-flow: row nowrap;
+		-webkit-box-pack: start;
+			-ms-flex-pack: start;
+				justify-content: flex-start;
+				list-style-type: none;
+
+	  }
+  
+	  .nav__toggle{
+        display:none;
+        top: -9999px;
+        left: -9999px;
+       
+    }	
+	.nav__toggle-label{
+        display:none;
+        }
+        
+        .nav__toggle ~ol, nav__toggle:checked ~ol{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:start;
+        }
+        
+        .nav--main-nav ol li ol{
+        position:absolute;	
+    }
+    
+        
+        
+        .nav__list li{ flex: 1;}
+        
+        .nav__list{
+            list-style-type:none;
+            padding-left:1rem;
+           
+            
+        }
+        .entry-content h2{
+			font-size:2rem
+		}
+		.wp-block-media-text__content p{
+			font-size:1rem;
+		}
+
+  .main{
+    flex:2;
+  }
+ 
+  body{
+	grid-template:
+	"hdr hdr hdr hdr" auto
+	"mn mn asi asi" auto
+	"ftr ftr ftr ftr" auto  / 1fr 1fr .2fr 1fr; 
+  }
+
+  .main-column{
+	  
+		flex:2;
+	}
+  .container{
+		display: flex;
+		flex-flow: row wrap;
+
+	}
+ .site-title{
+	 font-size:2.1rem;
+ }
+ 
+ .site-description{
+	 font-size:1.4rem;
+	 
+ }
+
+.widget-area{
+	flex:.9;
+	
+}
+.wp-block-media-text__content{
+font-size:1rem;
+}
+
+	
+	.wp-block-social-links{
+		margin-right:2rem !important;
+	}
+  
+}
+/*# sourceMappingURL=style.css.map */
